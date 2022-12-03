@@ -66,7 +66,7 @@ _Voilà!_ The application is now ready to be used.
 
 ### Usage
 
-```sh
+```text
 $ python3 src/main.py -h
 
 usage: main.py [-h] -l  [-s | -sc] [-o]
@@ -85,13 +85,13 @@ __Note__: As of now, the application only supports the `metric` system of units.
 
 ### Examples
 
-```sh
+```text
 $ ./main.py -l Gothenburg 
 
 Gothenburg (57.7072°, 11.967°) ~ 'broken clouds' (-0.37°C)
 ```
 
-```sh
+```text
 $ ./main.py -l Stockholm --scientific
 
 Stockholm (59.3293°, 18.0686°) ~ 'overcast clouds' (-1.13°C)
