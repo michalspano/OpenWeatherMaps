@@ -1,6 +1,6 @@
 ## Chalmers Teknologkonsulter - OpenWeatherMap `API` task case
 
-`OpenWeatherAPI CLI` is a simple `CLI` application written in `Python3` that uses the __OpenWeatherMap__ `API` to _fetch_ __weather data__ for a given location. Moreover, it can create a `Markdown` file with a table containing the weather data for a given city. Lastly, it can generate a `PDF` file from the `Markdown` file, using the `Pandoc` library.
+`OpenWeatherAPI CLI` is a simple `CLI` application written in `Python3` that uses the [__OpenWeatherMap__](https://openweathermap.org/) `API` to _fetch_ __weather data__ for a given location. Moreover, it can create a [`Markdown`](https://www.markdownguide.org/) file with a table containing the weather data for a given location. Lastly, it can generate a `PDF` file from the `Markdown` file, using the `Pandoc` library.
 
 ### Installation
 
@@ -20,7 +20,7 @@ $ python3 -m venv venv
 
 3. Activate the virtual environment
 
-The virtual environment can be activated by running the following command (on a `Unix` system):
+The virtual environment can be activated by running the __following command__ (on a `Unix` system):
 
 ```sh
 $ source venv/bin/activate
@@ -49,6 +49,8 @@ Using the defined __shebang__ in the `main.py` file, the application can be run 
 ```sh
 $ ./main.py [options]
 ```
+
+_Voilà!_ The application is now ready to be used.
 
 ### Usage
 
@@ -138,5 +140,7 @@ Using the `Pandoc` library:
 ```sh
 $ ./scripts/export.sh uppsala.md uppsala.pdf
 ```
+
+__Note__: The `export.sh` script can automatically detect whether the `Pandoc` library is installed or not. If it is not installed, the script will not run and the user will be _notified_.
 
 ![Pandoc export example](docs/example2.png)
