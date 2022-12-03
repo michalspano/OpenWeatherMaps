@@ -6,6 +6,18 @@
 
 Indeed, [`Python3`](https://www.python.org/downloads/) is required a __requirement__ for this application. Moreover, the `Pandoc` library is required for the `PDF` generation (this is optional). The `Pandoc` installation instructions can be found [here](https://github.com/jgm/pandoc/blob/master/INSTALL.md).
 
+Moreover, to use the `API` __service__, one must have an account and an `API` key. The `API` key can be obtained [here](https://home.openweathermap.org/api_keys).
+
+Then, inside the __root__ of the project, create a file `.env` with the following content:
+
+```text
+API_KEY=<your_api_key>
+```
+
+\*Where `<your_api_key>` is your `API` key obtained from the `OpenWeatherMap` __website__.
+
+Inevitable, the `.env` file is not under version control, so it is safe to store your `API` key - the __key__ is only visible in the __local__ environment.
+
 1. Clone the repository (via [`git`](https://git-scm.com/downloads))
 
 ```sh
