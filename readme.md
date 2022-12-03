@@ -88,16 +88,16 @@ __Note__: As of now, the application only supports the `metric` system of units.
 ```sh
 $ ./main.py -l Gothenburg 
 
-Gothenburg (11.967°, 57.7072°) ~ 'overcast clouds' (-0.28°C)
+Gothenburg (57.7072°, 11.967°) ~ 'broken clouds' (-0.37°C)
 ```
 
 ```sh
 $ ./main.py -l Stockholm --scientific
 
-Stockholm (18.0711°, 59.3251°) ~ 'overcast clouds' (-1°C)
+Stockholm (59.3293°, 18.0686°) ~ 'overcast clouds' (-1.13°C)
                         ...
-        min: -1.98°C            max: -0.06°C
-        pressure: 1032 hPa      humidity: 79%
+        min: -1.95°C            max: -0.03°C
+        pressure: 1032 hPa      humidity: 80%
         wind speed: 1.54 m/s    wind deg: 360°
         clouds: 100%            timezone: 3600s
 ```
@@ -116,14 +116,14 @@ $ ./main.py -l Uppsala -o uppsala.md
 #### `Markdown` file content
 
 ```md
-## Uppsala - 2022/12/03 22:19:14
+## Uppsala - 2022/12/03 22:56:43
 
 ![weather icon](http://openweathermap.org/img/w/04n.png)
 
 | attribute | value |
 | :---: | :---: |
-| lon | 17.6389 |
 | lat | 59.8586 |
+| lon | 17.6387 |
 | description | overcast clouds |
 | temp | -0.22 |
 ```
@@ -132,14 +132,14 @@ $ ./main.py -l Uppsala -o uppsala.md
 
 ---
 
-## Uppsala - 2022/12/03 22:19:14
+## Uppsala - 2022/12/03 22:56:43
 
 ![weather icon](http://openweathermap.org/img/w/04n.png)
 
 | attribute | value |
 | :---: | :---: |
-| lon | 17.6389 |
 | lat | 59.8586 |
+| lon | 17.6387 |
 | description | overcast clouds |
 | temp | -0.22 |
 
