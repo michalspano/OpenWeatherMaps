@@ -1,9 +1,142 @@
-## Chalmers Teknologkonsulter - Openweathermaps `API` case
+## Chalmers Teknologkonsulter - OpenWeatherMap `API` task case
 
-TODO: add description
+`OpenWeatherAPI CLI` is a simple `CLI` application written in `Python3` that uses the __OpenWeatherMap__ `API` to _fetch_ __weather data__ for a given location. Moreover, it can create a `Markdown` file with a table containing the weather data for a given city. Lastly, it can generate a `PDF` file from the `Markdown` file, using the `Pandoc` library.
 
-### To keep in mind...
+### Installation
 
-- Add instructions on how to install and run your program in your `README` file.
-- After sending your program to us, your code will be reviewed and tested to check if it meets the requirements.
-- If your code meets the requirements, a session will be held where you will have to explain your code to us to ensure you have not committed any form of plagiarism.
+Indeed, [`Python3`](https://www.python.org/downloads/) is required a __requirement__ for this application. Moreover, the `Pandoc` library is required for the `PDF` generation (this is optional). The `Pandoc` installation instructions can be found [here](https://github.com/jgm/pandoc/blob/master/INSTALL.md).
+
+1. Clone the repository (via [`git`](https://git-scm.com/downloads))
+
+```sh
+$ git clone https://github.com/michalspano/OpenWeatherMaps.git && cd OpenWeatherMaps
+```
+
+2. Create a `Python` __virtual environment__ in the project directory
+
+```sh
+$ python3 -m venv venv
+```
+
+3. Activate the virtual environment
+
+The virtual environment can be activated by running the following command (on a `Unix` system):
+
+```sh
+$ source venv/bin/activate
+```
+
+For `Windows` systems, the command is:
+
+```sh
+$ .\venv\Scripts\activate
+```
+
+4. Install the dependencies from the `requirements.txt` file
+
+```sh
+$ pip3 install -r requirements.txt
+```
+
+5. Run the application
+
+```sh
+$ python3 main.py [options]
+```
+
+Using the defined __shebang__ in the `main.py` file, the application can be run directly by executing the following command:
+
+```sh
+$ ./main.py [options]
+```
+
+### Usage
+
+```sh
+$ python3 src/main.py -h
+
+usage: main.py [-h] -l  [-s | -sc] [-o]
+
+OpenWeatherAPI CLI
+
+options:
+  -h, --help         show this help message and exit
+  -l , --location    the location to get the weather data for
+  -s, --simple       display the data in a simple way (default)
+  -sc, --scientific  display the data in a scientific way
+  -o , --output      write to a markdown file
+```
+
+__Note__: As of now, the application only supports the `metric` system of units. This means that the temperature is displayed in `Celsius` and the wind speed in `m/s`. The `API` supports the `imperial`, `standard` and `metric` systems of units. For future development, the application can be extended to support the other systems of units.
+
+### Examples
+
+```sh
+$ ./main.py -l Gothenburg 
+
+Gothenburg (11.967°, 57.7072°) ~ 'overcast clouds' (-0.28°C)
+```
+
+```sh
+$ ./main.py -l Stockholm --scientific
+
+Stockholm (18.0711°, 59.3251°) ~ 'overcast clouds' (-1°C)
+                        ...
+        min: -1.98°C            max: -0.06°C
+        pressure: 1032 hPa      humidity: 79%
+        wind speed: 1.54 m/s    wind deg: 360°
+        clouds: 100%            timezone: 3600s
+```
+
+#### Inside a terminal emulator
+
+![CLI action example](docs/example1.png)
+
+
+### More examples
+
+```sh
+$ ./main.py -l Uppsala -o uppsala.md
+```
+
+#### `Markdown` file content
+
+```md
+## Uppsala - 2022/12/03 22:19:14
+
+![weather icon](http://openweathermap.org/img/w/04n.png)
+
+| attribute | value |
+| :---: | :---: |
+| lon | 17.6389 |
+| lat | 59.8586 |
+| description | overcast clouds |
+| temp | -0.22 |
+```
+
+#### Rendered `Markdown` file
+
+---
+
+## Uppsala - 2022/12/03 22:19:14
+
+![weather icon](http://openweathermap.org/img/w/04n.png)
+
+| attribute | value |
+| :---: | :---: |
+| lon | 17.6389 |
+| lat | 59.8586 |
+| description | overcast clouds |
+| temp | -0.22 |
+
+---
+
+### Rendered `PDF` file 
+
+Using the `Pandoc` library:
+
+```sh
+$ ./scripts/export.sh uppsala.md uppsala.pdf
+```
+
+![Pandoc export example](docs/example2.png)
