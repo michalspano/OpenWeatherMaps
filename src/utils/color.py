@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 # author: @michalspano
-# utils.utils.py
+# utils.color.py
 # Contains class with colors
 
 class Colors:

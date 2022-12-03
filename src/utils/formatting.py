@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 # author: @michalspano
-# utils.utils.py
+# utils.formatting.py
 # Contains formatting functions, custom functions
 
 from utils.utils import extract_data
