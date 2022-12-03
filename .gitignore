@@ -1,0 +1,16 @@
+# macOS binary
+*.DS_Store
+
+# vscode
+.vscode/
+
+# Jetbrains
+.idea/
+
+# Python specific
+*.pyc
+*.pyo
+venv/
+
+# secrets
+*.env
