@@ -19,8 +19,8 @@ def extract_data(data: dict, is_scientific: bool = False) -> dict:
 
     if not is_scientific:
         return {
-            'lon': data['coord']['lon'],
             'lat': data['coord']['lat'],
+            'lon': data['coord']['lon'],
             'description': data['weather'][0]['description'],
             'temp': data['main']['temp'],
             'icon': get_icon(data)

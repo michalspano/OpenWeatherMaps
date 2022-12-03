@@ -18,13 +18,13 @@ def format_simple(fetched_data: dict, location: str) -> str:
 
     data = extract_data(fetched_data)
 
-    lon = data['lon']
     lat = data['lat']
+    lon = data['lon']
     description = data['description']
     temp = data['temp']
 
     # return the formatted output (simple version)
-    return f"{Colors.GREEN}{location}{Colors.RESET} ({lon}°, {lat}°) ~ " \
+    return f"{Colors.GREEN}{location}{Colors.RESET} ({lat}°, {lon}°) ~ " \
            f"'{description}' ({Colors.CYAN}{temp}°C{Colors.RESET})"
 
 
