@@ -18,7 +18,7 @@ def main() -> None:
     parser = argparse.ArgumentParser(description='OpenWeatherAPI CLI')
     parser.add_argument('-l', '--location', type=str, metavar='', required=True, help='the location to get the weather data for')
     group = parser.add_mutually_exclusive_group()
-    group.add_argument('-s', '--simple', action='store_true', help='display the data in a simple way')
+    group.add_argument('-s', '--simple', action='store_true', help='display the data in a simple way (default)')
     group.add_argument('-sc', '--scientific', action='store_true', help='display the data in a scientific way')
     parser.add_argument('-o', '--output', type=str, metavar='', help='write to a markdown file')
     args = parser.parse_args()

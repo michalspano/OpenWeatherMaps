@@ -55,4 +55,4 @@ def format_scientific(fetched_data: dict, location: str) -> str:
            f"\t{Colors.ORANGE}min: {temp_min}°C\t\tmax: {temp_max}°C{Colors.RESET}{nl}" \
            f"\t{Colors.YELLOW}pressure: {pressure} hPa\thumidity: {humidity}%{Colors.RESET}{nl}" \
            f"\t{Colors.BLUE}wind speed: {wind_speed} m/s\twind deg: {wind_deg}°{Colors.RESET}{nl}" \
-           f"\t{Colors.VIOLET}clouds: {clouds}%\t\ttimezone: {timezone}{Colors.RESET}"
+           f"\t{Colors.VIOLET}clouds: {clouds}%\t\ttimezone: {timezone}s{Colors.RESET}"
