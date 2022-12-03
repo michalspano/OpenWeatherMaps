@@ -155,6 +155,8 @@ $ ./scripts/export.sh uppsala.md uppsala.pdf
 
 __Note__: The `export.sh` script can automatically detect whether the `Pandoc` library is installed or not. If it is not installed, the script will not run and the user will be _notified_.
 
+As of now, the `export.sh` script is only available for `Unix` systems (based on `sh`/`bash`, etc.). For `Windows` systems, the `Pandoc` library can be installed manually and the `export.sh` script can be modified to run on `Windows` systems.
+
 ![Pandoc export example](docs/example2.png)
 
 ### License
