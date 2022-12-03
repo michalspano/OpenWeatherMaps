@@ -144,3 +144,7 @@ $ ./scripts/export.sh uppsala.md uppsala.pdf
 __Note__: The `export.sh` script can automatically detect whether the `Pandoc` library is installed or not. If it is not installed, the script will not run and the user will be _notified_.
 
 ![Pandoc export example](docs/example2.png)
+
+### License
+
+This project is licensed under the __MIT License__ - see the [LICENSE](https://github.com/michalspano/OpenWeatherMaps/blob/main/LICENSE) file for details.
