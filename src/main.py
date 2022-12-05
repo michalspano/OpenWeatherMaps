@@ -10,18 +10,12 @@ from dotenv import load_dotenv
 # contents of the utils package
 from utils.utils import *
 from utils.formatting import *
+from utils.arg_parser import arg_parser_init
 
 def main() -> None:
     '''Main function'''
 
-    # define the command line arguments using the argparse module
-    parser = argparse.ArgumentParser(description='OpenWeatherAPI CLI')
-    parser.add_argument('-l', '--location', type=str, metavar='', required=True, help='the location to get the weather data for')
-    group = parser.add_mutually_exclusive_group()
-    group.add_argument('-s', '--simple', action='store_true', help='display the data in a simple way (default)')
-    group.add_argument('-sc', '--scientific', action='store_true', help='display the data in a scientific way')
-    parser.add_argument('-o', '--output', type=str, metavar='', help='write to a markdown file')
-    args = parser.parse_args()
+    args = arg_parser_init() # initialize the argument parser
 
     # the API_KEY is needed, load it from the .env file (in case it not part of the environment variables)
     if ENV_VAR not in environ:
@@ -31,7 +25,7 @@ def main() -> None:
     try:
         API_KEY = environ[ENV_VAR]
     except KeyError:
-        throw_error('`{ENV_VAR}` not found in `.env`!')
+        throw_error(f'`{ENV_VAR}` not found in `.env`!')
 
     # get the location, the obtained coordinates 
     location: str = args.location
@@ -46,7 +40,7 @@ def main() -> None:
     try:
         response = get(url)
     except Exception as exception:
-        throw_error(f'Error: {exception}')
+        throw_error('Error connecting to the API service.')
     data = response.json()
 
     is_scientific: bool = False # default mode
@@ -66,6 +60,7 @@ def main() -> None:
 
         if not args.output.endswith('.md'): # ensure the file extension is .md
             throw_error('`output` file extension must be `.md`!')
+
         write_markdown_table(args.output, extracted_data, location)
 
 

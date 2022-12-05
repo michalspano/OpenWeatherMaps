@@ -47,7 +47,11 @@ def location_to_coordinates(location: str, API: str) -> tuple:
 
     url = f"http://api.openweathermap.org/geo/1.0/direct?q={location}&limit=5&appid={API}"
 
-    response = get(url)
+    try:
+        response = get(url)
+    except Exception as exception:
+        throw_error('Error connecting to the API service.')
+
     data = response.json()
 
     # detect invalid location
@@ -58,9 +62,8 @@ def location_to_coordinates(location: str, API: str) -> tuple:
 
 
 def throw_error(message: str) -> None:
-    '''Throw an error message and exit'''
-    print(f'{Colors.RED}ERROR: {message}{Colors.RESET}')
-    exit(1)
+    '''Throw an error message and exit the process'''
+    raise SystemExit(f'{Colors.RED}ERROR: {message}{Colors.RESET}')
 
 
 def write_markdown_table(path: str, data: dict, location: str) -> None:
