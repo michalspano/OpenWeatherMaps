@@ -1,4 +1,4 @@
-## Chalmers Teknologkonsulter - OpenWeatherMap `API` task case
+## OpenWeatherMap API CLI Fetcher 
 
 `OpenWeatherAPI CLI` is a simple `CLI` application written in `Python3` that uses the [__OpenWeatherMap__](https://openweathermap.org/) `API` to _fetch_ __weather data__ for a given location. Moreover, it can create a [`Markdown`](https://www.markdownguide.org/) file with a table containing the weather data for a given location. Lastly, it can generate a `PDF` file from the `Markdown` file, using the `Pandoc` library.
 
